@@ -1,3 +1,373 @@
-* {
-    background-color: rgb(14, 6, 0)
+/* ===== Księga stylu: Iskra Studio ===== */
+:root {
+  --ink: #14161f;
+  --ink-soft: #22252f;
+  --paper: #f7f5f2;
+  --muted: #5d6170;
+  --accent: #ff5a36;
+  --accent-dark: #e4441f;
+
+  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-head: "Space Grotesk", "Inter", system-ui, sans-serif;
+
+  --bs-body-font-family: var(--font-body);
+  --bs-body-color: var(--ink);
+  --bs-body-bg: #ffffff;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 72px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+body {
+  font-family: var(--font-body);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, .brand {
+  font-family: var(--font-head);
+  letter-spacing: -0.02em;
+}
+
+.text-accent { color: var(--accent) !important; }
+.text-ink { color: var(--ink); }
+.text-muted-ink { color: var(--muted); }
+.text-light-muted { color: rgba(255, 255, 255, 0.7); }
+
+/* ===== Przyciski ===== */
+.btn-accent {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: var(--accent);
+  --bs-btn-border-color: var(--accent);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: var(--accent-dark);
+  --bs-btn-hover-border-color: var(--accent-dark);
+  --bs-btn-active-bg: var(--accent-dark);
+  --bs-btn-active-border-color: var(--accent-dark);
+  --bs-btn-focus-shadow-rgb: 255, 90, 54;
+  font-weight: 600;
+}
+
+.btn-lg {
+  font-size: 1rem;
+  padding: 0.85rem 1.6rem;
+  border-radius: 0.6rem;
+}
+
+/* ===== Nawigacja ===== */
+.site-nav {
+  background-color: rgba(20, 22, 31, 0.92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  padding-block: 0.85rem;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-weight: 700;
+  font-size: 1.35rem;
+  color: #fff;
+}
+
+.brand-sm { font-size: 1.15rem; }
+
+.brand-mark {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 4px rgba(255, 90, 54, 0.25);
+}
+
+.site-nav .nav-link {
+  color: rgba(255, 255, 255, 0.78);
+  font-weight: 500;
+}
+
+.site-nav .nav-link:hover,
+.site-nav .nav-link:focus-visible {
+  color: #fff;
+}
+
+.navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+/* ===== Hero ===== */
+.hero {
+  min-height: 100vh;
+  min-height: 100svh;
+  padding-top: 7rem;
+  padding-bottom: 4rem;
+  background-color: var(--ink);
+  background-size: cover;
+  background-position: center right;
+  color: #fff;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+.hero-title {
+  font-size: clamp(2.4rem, 6vw, 4.5rem);
+  font-weight: 700;
+  line-height: 1.05;
+  margin-bottom: 1.5rem;
+}
+
+.hero-lead {
+  font-size: 1.15rem;
+  color: rgba(255, 255, 255, 0.78);
+  max-width: 36rem;
+  margin-bottom: 2.25rem;
+}
+
+.hero-stats li {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-stats strong {
+  font-family: var(--font-head);
+  font-size: 1.9rem;
+  line-height: 1.1;
+}
+
+.hero-stats span {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* ===== Sekcje ===== */
+.section {
+  padding-block: 6rem;
+}
+
+.section-alt { background-color: var(--paper); }
+
+.section-dark {
+  background-color: var(--ink);
+  color: #fff;
+}
+
+.section-title {
+  font-size: clamp(1.9rem, 3.5vw, 2.75rem);
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 1.25rem;
+}
+
+/* ===== O nas ===== */
+.check-list li {
+  position: relative;
+  padding-left: 2rem;
+  margin-bottom: 0.75rem;
+  font-weight: 500;
+}
+
+.check-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.35em;
+  width: 1.1rem;
+  height: 1.1rem;
+  border-radius: 50%;
+  background: var(--accent) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='white' stroke-width='2.5'%3E%3Cpath d='M4 8.5l2.5 2.5L12 5'/%3E%3C/svg%3E") center / 70% no-repeat;
+}
+
+.about-figure {
+  position: relative;
+}
+
+.about-figure img {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  width: 100%;
+}
+
+.about-badge {
+  position: absolute;
+  left: -1rem;
+  bottom: -1.5rem;
+  display: flex;
+  flex-direction: column;
+  background: var(--ink);
+  color: #fff;
+  padding: 1.1rem 1.4rem;
+  border-radius: 1rem;
+  box-shadow: 0 20px 40px rgba(20, 22, 31, 0.25);
+}
+
+.about-badge strong {
+  font-family: var(--font-head);
+  font-size: 2rem;
+  line-height: 1;
+  color: var(--accent);
+}
+
+.about-badge span {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+@media (max-width: 575.98px) {
+  .about-badge { left: 1rem; }
+}
+
+/* ===== Oferta ===== */
+.offer-card {
+  border: 1px solid rgba(20, 22, 31, 0.08);
+  border-radius: 1.25rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.offer-card .card-body { padding: 2.25rem; }
+
+.offer-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 48px rgba(20, 22, 31, 0.1);
+}
+
+.offer-number {
+  display: inline-block;
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--accent);
+  background: rgba(255, 90, 54, 0.1);
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  margin-bottom: 1.5rem;
+}
+
+.offer-card .card-title {
+  font-weight: 700;
+  margin-bottom: 0.85rem;
+}
+
+.offer-list {
+  border-top: 1px solid rgba(20, 22, 31, 0.08);
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+}
+
+.offer-list li {
+  font-size: 0.925rem;
+  font-weight: 500;
+  padding-block: 0.25rem;
+}
+
+.offer-list li::before {
+  content: "→";
+  color: var(--accent);
+  margin-right: 0.6rem;
+}
+
+.offer-card-featured {
+  background: var(--ink);
+  color: #fff;
+  border-color: var(--ink);
+}
+
+.offer-card-featured .card-text { color: rgba(255, 255, 255, 0.75); }
+.offer-card-featured .offer-list { border-top-color: rgba(255, 255, 255, 0.12); }
+.offer-card-featured .offer-number { background: rgba(255, 90, 54, 0.2); }
+
+/* ===== Kontakt ===== */
+.contact-list {
+  font-style: normal;
+}
+
+.contact-item {
+  display: flex;
+  flex-direction: column;
+  padding-block: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.contact-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.25rem;
+}
+
+.contact-item a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.contact-item a:hover { text-decoration: underline; }
+
+.contact-form {
+  background: var(--ink-soft);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1.25rem;
+  padding: 2rem;
+}
+
+@media (min-width: 768px) {
+  .contact-form { padding: 2.5rem; }
+}
+
+.contact-form .form-label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.contact-form .form-control,
+.contact-form .form-select {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  padding: 0.75rem 1rem;
+  border-radius: 0.6rem;
+}
+
+.contact-form .form-select {
+  --bs-form-select-bg-img: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+}
+
+.contact-form .form-select option { color: var(--ink); }
+
+.contact-form .form-control::placeholder { color: rgba(255, 255, 255, 0.4); }
+
+.contact-form .form-control:focus,
+.contact-form .form-select:focus {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 0.2rem rgba(255, 90, 54, 0.25);
+  color: #fff;
+}
+
+.form-status {
+  color: #7ee2a8;
+  font-weight: 500;
+}
+
+/* ===== Stopka ===== */
+.site-footer {
+  background: #0d0e14;
+  color: rgba(255, 255, 255, 0.6);
+  padding-block: 2rem;
 }
