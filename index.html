@@ -3,13 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Iskra Studio – agencja marketingu cyfrowego. Strategia marki, kampanie performance i social media, które przekładają się na sprzedaż.">
-  <meta name="theme-color" content="#14161f">
-  <title>Iskra Studio – Agencja Marketingowa</title>
+  <meta name="description" content="Puls Digital – agencja marketingowa dla małych i średnich firm. Marketing internetowy, prowadzenie social mediów i kampanie reklamowe.">
+  <meta name="theme-color" content="#24241F">
+  <title>Puls Digital – Agencja Marketingowa</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:ital,wght@0,500;0,700;0,800;0,900;1,800&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link href="style.css" rel="stylesheet">
 </head>
@@ -17,22 +18,22 @@
 
   <!-- 1. Pasek nawigacyjny -->
   <header>
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top site-nav" aria-label="Nawigacja główna">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top site-nav" id="nawigacja" aria-label="Nawigacja główna">
       <div class="container">
-        <a class="navbar-brand brand" href="#hero">
-          <span class="brand-mark" aria-hidden="true"></span>
-          <span>Iskra<span class="text-accent">.</span>Studio</span>
+        <a class="navbar-brand brand" href="#hero" data-testid="nav-brand-link">
+          <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="18"/><path d="M8 34h12l5-12 8 22 6-16 4 6h13"/></svg>
+          <span>Puls<span class="text-primary-brand">.</span>Digital</span>
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuGlowne" aria-controls="menuGlowne" aria-expanded="false" aria-label="Przełącz nawigację">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuGlowne" aria-controls="menuGlowne" aria-expanded="false" aria-label="Przełącz nawigację" data-testid="navbar-toggler">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="menuGlowne">
-          <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
-            <li class="nav-item"><a class="nav-link" href="#o-nas">O nas</a></li>
-            <li class="nav-item"><a class="nav-link" href="#oferta">Oferta</a></li>
-            <li class="nav-item"><a class="nav-link" href="#kontakt">Kontakt</a></li>
-            <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
-              <a class="btn btn-accent btn-sm px-3" href="#kontakt">Bezpłatna wycena</a>
+          <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
+            <li class="nav-item"><a class="nav-link" href="#o-nas" data-testid="nav-o-nas-link">O nas</a></li>
+            <li class="nav-item"><a class="nav-link" href="#oferta" data-testid="nav-oferta-link">Oferta</a></li>
+            <li class="nav-item"><a class="nav-link" href="#kontakt" data-testid="nav-kontakt-link">Kontakt</a></li>
+            <li class="nav-item ms-lg-2 mt-2 mt-lg-0 mb-2 mb-lg-0">
+              <a class="btn btn-cta btn-sm" href="#kontakt" data-testid="nav-cta-button"><span>Zapytaj o ofertę</span><i class="cta-dot" aria-hidden="true"></i></a>
             </li>
           </ul>
         </div>
@@ -42,61 +43,69 @@
 
   <main>
     <!-- 2. Sekcja wiodąca -->
-    <section id="hero" class="hero d-flex align-items-center" style="background-image: linear-gradient(90deg, rgba(20,22,31,.96) 0%, rgba(20,22,31,.82) 45%, rgba(20,22,31,.35) 100%), url('img/hero.png');">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 col-xl-7">
-            <p class="eyebrow">Agencja marketingu cyfrowego · Warszawa</p>
-            <h1 class="hero-title">
-              Iskra Studio<br>
-              <span class="text-accent">Rozpalamy marki,</span> które sprzedają.
-            </h1>
-            <p class="hero-lead">
-              Łączymy strategię, kreację i analitykę, aby Twoja firma była widoczna tam, gdzie są Twoi klienci.
-              Projektujemy kampanie, które da się zmierzyć – i które realnie zwiększają sprzedaż.
-            </p>
-            <div class="d-flex flex-wrap gap-3">
-              <a href="#kontakt" class="btn btn-accent btn-lg">Porozmawiajmy o projekcie</a>
-              <a href="#oferta" class="btn btn-outline-light btn-lg">Zobacz ofertę</a>
-            </div>
-            <ul class="hero-stats list-unstyled d-flex flex-wrap gap-4 gap-md-5 mt-5 mb-0">
-              <li><strong>120+</strong><span>zrealizowanych kampanii</span></li>
-              <li><strong>8 lat</strong><span>na rynku</span></li>
-              <li><strong>4,1×</strong><span>średni ROAS klientów</span></li>
-            </ul>
-          </div>
+    <section id="hero" class="hero">
+      <div class="hero-bg" data-parallax style="background-image: url('img/hero.jpg');" aria-hidden="true"></div>
+      <div class="hero-spot" id="heroSpot" aria-hidden="true"></div>
+      <svg class="hero-pulse" viewBox="0 0 1600 300" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0 150 H520 L560 150 L590 70 L630 250 L670 30 L710 210 L740 150 H1000 L1030 150 L1050 110 L1075 190 L1100 150 H1600"/>
+      </svg>
+      <div class="container hero-inner text-center" id="heroInner">
+        <p class="eyebrow hero-eyebrow"><span class="live-dot" aria-hidden="true"></span>Agencja marketingu internetowego</p>
+        <h1 class="hero-title" data-testid="hero-title">
+          <span class="line"><span class="hero-name">Puls Digital</span></span>
+          <span class="line"><span>Marka, którą</span></span>
+          <span class="line"><span><em class="text-primary-brand">czuć w sieci.</em></span></span>
+        </h1>
+        <p class="hero-lead mx-auto">
+          Pomagamy małym i średnim firmom budować rozpoznawalność w Internecie. Prowadzimy media społecznościowe,
+          tworzymy kampanie reklamowe i planujemy marketing, który przyciąga nowych klientów.
+        </p>
+        <div class="hero-actions d-flex flex-wrap justify-content-center gap-3">
+          <a href="#kontakt" class="btn btn-cta btn-lg" data-testid="hero-cta-button"><span>Porozmawiajmy o Twojej marce</span><i class="cta-dot" aria-hidden="true"></i></a>
+          <a href="#oferta" class="btn btn-ghost btn-lg" data-testid="hero-offer-button">Zobacz ofertę</a>
         </div>
       </div>
+      <a href="#o-nas" class="scroll-cue" aria-label="Przewiń do sekcji O nas" data-testid="hero-scroll-cue"><span></span></a>
     </section>
+
+    <!-- Marquee -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Social media</span><i></i><span>Kampanie reklamowe</span><i></i><span>Marketing internetowy</span><i></i><span>Rozpoznawalność marki</span><i></i>
+        <span>Social media</span><i></i><span>Kampanie reklamowe</span><i></i><span>Marketing internetowy</span><i></i><span>Rozpoznawalność marki</span><i></i>
+      </div>
+    </div>
 
     <!-- 3. Sekcja o firmie -->
     <section id="o-nas" class="section">
       <div class="container">
-        <div class="row align-items-center g-5">
-          <div class="col-lg-6">
-            <p class="eyebrow eyebrow-dark">O nas</p>
-            <h2 class="section-title">Mały zespół, duży wpływ na wyniki</h2>
-            <p class="text-muted-ink">
-              Iskra Studio to niezależna agencja marketingowa założona w 2018 roku przez ludzi, którzy wcześniej
-              budowali działy marketingu w firmach technologicznych i e-commerce. Pracujemy z markami z sektora MŚP,
-              które chcą rosnąć szybciej – bez przepalania budżetu.
+        <div class="row align-items-center g-4 g-lg-5">
+          <div class="col-lg-6" data-reveal>
+            <p class="eyebrow">01 — O nas</p>
+            <h2 class="section-title">Trzymamy rękę na <span class="text-primary-brand">pulsie</span> Twojej marki</h2>
+            <p class="text-soft">
+              Puls Digital to agencja marketingowa, która specjalizuje się w marketingu internetowym, prowadzeniu
+              mediów społecznościowych i tworzeniu kampanii reklamowych. Pracujemy z właścicielami małych i średnich
+              firm, przedsiębiorcami oraz osobami, które rozwijają własne marki.
             </p>
-            <p class="text-muted-ink">
-              <strong class="text-ink">Nasza misja</strong> jest prosta: każdą złotówkę wydaną na marketing zamieniać
-              w mierzalny efekt. Dlatego każdy projekt zaczynamy od danych, a kończymy na raporcie, który rozumie także zarząd.
+            <p class="text-soft">
+              <strong class="text-ink">Nasza misja</strong> jest prosta: sprawić, by o Twojej firmie było słychać
+              tam, gdzie spędzają czas Twoi klienci — i przełożyć tę widoczność na realne zapytania i sprzedaż.
             </p>
             <ul class="check-list list-unstyled mt-4 mb-0">
-              <li>Dedykowany opiekun i przejrzyste raporty co miesiąc</li>
-              <li>Certyfikowani specjaliści Google Ads i Meta</li>
-              <li>Brak długich umów – zostajesz, bo widzisz wyniki</li>
+              <li>Jeden opiekun i jasna komunikacja na każdym etapie</li>
+              <li>Działania dopasowane do budżetu małej i średniej firmy</li>
+              <li>Regularne raporty, z których od razu widać efekty</li>
             </ul>
           </div>
-          <div class="col-lg-6">
-            <figure class="about-figure m-0">
-              <img src="img/zespol.png" class="img-fluid rounded-4" alt="Zespół Iskra Studio podczas warsztatu strategicznego w biurze" width="1200" height="900" loading="lazy">
+          <div class="col-lg-6" data-reveal>
+            <figure class="about-figure m-0" id="aboutFigure">
+              <div class="about-frame">
+                <img src="img/zespol.jpg" alt="Zespół agencji podczas burzy mózgów nad kampanią w mediach społecznościowych" width="1200" height="896" loading="lazy" data-testid="about-image">
+              </div>
               <figcaption class="about-badge">
-                <strong>98%</strong>
-                <span>klientów poleca nas dalej</span>
+                <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M4 34h14l5-12 8 22 6-16 4 6h19"/></svg>
+                <span>Strategia · Treści · Reklama</span>
               </figcaption>
             </figure>
           </div>
@@ -107,52 +116,61 @@
     <!-- 4. Sekcja kluczowej oferty -->
     <section id="oferta" class="section section-alt">
       <div class="container">
-        <div class="row justify-content-center text-center mb-5">
-          <div class="col-lg-7">
-            <p class="eyebrow eyebrow-dark">Oferta</p>
-            <h2 class="section-title">W czym możemy Ci pomóc</h2>
-            <p class="text-muted-ink mb-0">Trzy filary, na których budujemy wzrost naszych klientów. Możesz wybrać jeden lub połączyć je w kompleksową współpracę.</p>
+        <div class="row justify-content-center text-center mb-5" data-reveal>
+          <div class="col-lg-8">
+            <p class="eyebrow">02 — Oferta</p>
+            <h2 class="section-title">Trzy sposoby, by Twoja firma <span class="text-primary-brand">przyspieszyła</span></h2>
+            <p class="text-soft mb-0">Wybierz jeden obszar albo połącz wszystkie w kompleksową współpracę.</p>
           </div>
         </div>
-        <div class="row g-4">
-          <div class="col-md-6 col-lg-4">
-            <article class="card offer-card h-100">
+        <div class="row g-4 offer-row">
+          <div class="col-md-6 col-lg-4 d-flex" data-reveal>
+            <article class="card offer-card w-100" data-testid="offer-card-marketing">
               <div class="card-body">
-                <span class="offer-number" aria-hidden="true">01</span>
-                <h3 class="card-title h4">Strategia i branding</h3>
-                <p class="card-text text-muted-ink">Analiza rynku i konkurencji, pozycjonowanie, identyfikacja wizualna oraz komunikacja, dzięki której marka staje się rozpoznawalna.</p>
+                <div class="offer-top">
+                  <span class="offer-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M8 11h6M11 8v6"/></svg></span>
+                  <span class="offer-number" aria-hidden="true">01</span>
+                </div>
+                <h3 class="card-title">Marketing internetowy</h3>
+                <p class="card-text text-soft">Strategia obecności online, która sprawia, że klienci znajdują Twoją firmę w wyszukiwarce i w sieci.</p>
                 <ul class="offer-list list-unstyled mb-0">
-                  <li>Audyt marki</li>
-                  <li>Księga znaku i stylu</li>
-                  <li>Strategia komunikacji</li>
+                  <li>Strategia marketingowa</li>
+                  <li>Widoczność w Google</li>
+                  <li>Analityka i raporty</li>
                 </ul>
               </div>
             </article>
           </div>
-          <div class="col-md-6 col-lg-4">
-            <article class="card offer-card offer-card-featured h-100">
+          <div class="col-md-6 col-lg-4 d-flex" data-reveal>
+            <article class="card offer-card offer-card-featured w-100" data-testid="offer-card-social">
               <div class="card-body">
-                <span class="offer-number" aria-hidden="true">02</span>
-                <h3 class="card-title h4">Kampanie performance</h3>
-                <p class="card-text">Płatne kampanie w Google Ads, Meta Ads i TikTok Ads nastawione na konwersje, z pełną analityką i optymalizacją budżetu.</p>
+                <div class="offer-top">
+                  <span class="offer-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6"/></svg></span>
+                  <span class="offer-number" aria-hidden="true">02</span>
+                </div>
+                <h3 class="card-title">Prowadzenie social mediów</h3>
+                <p class="card-text">Regularne, przemyślane treści na Facebooku, Instagramie, TikToku i LinkedInie, które budują zaangażowaną społeczność.</p>
                 <ul class="offer-list list-unstyled mb-0">
-                  <li>Google &amp; Meta Ads</li>
+                  <li>Plan i harmonogram publikacji</li>
+                  <li>Grafiki i krótkie wideo</li>
+                  <li>Moderacja i kontakt z odbiorcami</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+          <div class="col-md-12 col-lg-4 d-flex" data-reveal>
+            <article class="card offer-card w-100" data-testid="offer-card-kampanie">
+              <div class="card-body">
+                <div class="offer-top">
+                  <span class="offer-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 11v2a1 1 0 001 1h3l5 4V6L7 10H4a1 1 0 00-1 1zM16 8a5 5 0 010 8M19 5a9 9 0 010 14"/></svg></span>
+                  <span class="offer-number" aria-hidden="true">03</span>
+                </div>
+                <h3 class="card-title">Kampanie reklamowe</h3>
+                <p class="card-text text-soft">Płatne kampanie w Google Ads i Meta Ads, które docierają do właściwych osób i zamieniają kliknięcia w zapytania.</p>
+                <ul class="offer-list list-unstyled mb-0">
+                  <li>Google Ads i Meta Ads</li>
                   <li>Remarketing</li>
-                  <li>Analityka GA4</li>
-                </ul>
-              </div>
-            </article>
-          </div>
-          <div class="col-md-6 col-lg-4">
-            <article class="card offer-card h-100">
-              <div class="card-body">
-                <span class="offer-number" aria-hidden="true">03</span>
-                <h3 class="card-title h4">Social media i content</h3>
-                <p class="card-text text-muted-ink">Prowadzenie profili, produkcja treści wideo i graficznych, współprace z influencerami oraz budowanie zaangażowanej społeczności.</p>
-                <ul class="offer-list list-unstyled mb-0">
-                  <li>Instagram, TikTok, LinkedIn</li>
-                  <li>Produkcja wideo</li>
-                  <li>Influencer marketing</li>
+                  <li>Optymalizacja budżetu</li>
                 </ul>
               </div>
             </article>
@@ -164,50 +182,46 @@
     <!-- 5. Sekcja kontaktowa -->
     <section id="kontakt" class="section section-dark">
       <div class="container">
-        <div class="row g-5">
-          <div class="col-lg-5">
-            <p class="eyebrow">Kontakt</p>
-            <h2 class="section-title text-white">Opowiedz nam o swoim projekcie</h2>
-            <p class="text-light-muted">Odpowiadamy w ciągu jednego dnia roboczego. Pierwsza konsultacja i wycena są bezpłatne.</p>
-            <address class="contact-list mt-4 mb-0">
+        <div class="row g-4 g-lg-5">
+          <div class="col-lg-5" data-reveal>
+            <p class="eyebrow">03 — Kontakt</p>
+            <h2 class="section-title">Sprawdźmy, jak mocno może bić <span class="text-primary-brand">Twoja marka</span></h2>
+            <p class="text-soft">Napisz kilka słów o swojej firmie — przygotujemy propozycję działań dopasowaną do Twoich celów.</p>
+            <address class="contact-list mt-4 mb-0" data-testid="contact-details">
               <div class="contact-item">
                 <span class="contact-label">Adres</span>
-                <span>ul. Mokotowska 24/5<br>00-561 Warszawa</span>
+                <span>[ulica i numer]<br>[kod pocztowy, miasto]</span>
               </div>
               <div class="contact-item">
                 <span class="contact-label">E-mail</span>
-                <a href="mailto:kontakt@iskrastudio.pl">kontakt@iskrastudio.pl</a>
+                <span>[adres e-mail]</span>
               </div>
               <div class="contact-item">
                 <span class="contact-label">Telefon</span>
-                <a href="tel:+48221234567">+48 22 123 45 67</a>
-              </div>
-              <div class="contact-item">
-                <span class="contact-label">Godziny</span>
-                <span>pon.–pt. 9:00–17:00</span>
+                <span>[numer telefonu]</span>
               </div>
             </address>
           </div>
-          <div class="col-lg-7">
-            <form class="contact-form" id="formularzKontaktowy" action="#" method="post" novalidate>
+          <div class="col-lg-7" data-reveal>
+            <form class="contact-form" id="formularzKontaktowy" action="#" method="post" novalidate data-testid="contact-form">
               <div class="row g-3">
                 <div class="col-md-6">
                   <label for="imieNazwisko" class="form-label">Imię i nazwisko</label>
-                  <input type="text" class="form-control" id="imieNazwisko" name="imie_nazwisko" autocomplete="name" placeholder="Jan Kowalski" required>
+                  <input type="text" class="form-control" id="imieNazwisko" name="imie_nazwisko" autocomplete="name" placeholder="Jan Kowalski" required data-testid="contact-name-input">
                   <div class="invalid-feedback">Podaj imię i nazwisko.</div>
                 </div>
                 <div class="col-md-6">
                   <label for="email" class="form-label">Adres e-mail</label>
-                  <input type="email" class="form-control" id="email" name="email" autocomplete="email" placeholder="jan@firma.pl" required>
+                  <input type="email" class="form-control" id="email" name="email" autocomplete="email" placeholder="jan@firma.pl" required data-testid="contact-email-input">
                   <div class="invalid-feedback">Podaj poprawny adres e-mail.</div>
                 </div>
                 <div class="col-12">
                   <label for="temat" class="form-label">Temat wiadomości</label>
-                  <select class="form-select" id="temat" name="temat" required>
+                  <select class="form-select" id="temat" name="temat" required data-testid="contact-topic-select">
                     <option value="" selected disabled>Wybierz temat…</option>
-                    <option value="strategia">Strategia i branding</option>
-                    <option value="performance">Kampanie performance</option>
-                    <option value="social">Social media i content</option>
+                    <option value="marketing">Marketing internetowy</option>
+                    <option value="social">Prowadzenie social mediów</option>
+                    <option value="kampanie">Kampanie reklamowe</option>
                     <option value="kompleksowa">Kompleksowa współpraca</option>
                     <option value="inne">Inne</option>
                   </select>
@@ -215,12 +229,12 @@
                 </div>
                 <div class="col-12">
                   <label for="tresc" class="form-label">Treść zapytania</label>
-                  <textarea class="form-control" id="tresc" name="tresc" rows="5" placeholder="Opisz krótko swoją firmę, cele i orientacyjny budżet…" required></textarea>
+                  <textarea class="form-control" id="tresc" name="tresc" rows="5" placeholder="Opisz krótko swoją firmę, cele i orientacyjny budżet…" required data-testid="contact-message-input"></textarea>
                   <div class="invalid-feedback">Napisz kilka słów o projekcie.</div>
                 </div>
                 <div class="col-12 d-flex flex-wrap align-items-center gap-3">
-                  <button type="submit" class="btn btn-accent btn-lg">Wyślij zapytanie</button>
-                  <p class="form-status mb-0" id="statusFormularza" role="status" aria-live="polite"></p>
+                  <button type="submit" class="btn btn-cta btn-lg" data-testid="contact-submit-button"><span>Wyślij zapytanie</span><i class="cta-dot" aria-hidden="true"></i></button>
+                  <p class="form-status mb-0" id="statusFormularza" role="status" aria-live="polite" data-testid="contact-form-status"></p>
                 </div>
               </div>
             </form>
@@ -233,44 +247,22 @@
   <!-- 6. Stopka -->
   <footer class="site-footer">
     <div class="container">
-      <div class="row g-3 align-items-center">
-        <div class="col-md-6">
-          <p class="mb-1 brand brand-sm"><span>Iskra<span class="text-accent">.</span>Studio</span></p>
-          <p class="mb-0 small">Iskra Studio sp. z o.o. · NIP 525-000-00-00 · KRS 0000123456</p>
+      <p class="footer-word" aria-hidden="true">Puls<span class="text-primary-brand">.</span>Digital</p>
+      <div class="row g-3 align-items-end">
+        <div class="col-md-7">
+          <p class="mb-1 small" data-testid="footer-company">[Pełna nazwa firmy] · NIP [NIP] · REGON [REGON]</p>
+          <p class="mb-0 small">[ulica i numer], [kod pocztowy, miasto]</p>
         </div>
-        <div class="col-md-6 text-md-end">
-          <p class="mb-0 small">&copy; <span id="rok">2026</span> Iskra Studio. Wszelkie prawa zastrzeżone.</p>
+        <div class="col-md-5 text-md-end">
+          <p class="mb-0 small" data-testid="footer-copyright">&copy; <span id="rok">2026</span> Puls Digital. Wszelkie prawa zastrzeżone.</p>
         </div>
       </div>
     </div>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-  <script>
-    document.getElementById('rok').textContent = new Date().getFullYear();
-
-    const menu = document.getElementById('menuGlowne');
-    menu.querySelectorAll('a').forEach(function (link) {
-      link.addEventListener('click', function () {
-        if (menu.classList.contains('show')) {
-          bootstrap.Collapse.getOrCreateInstance(menu).hide();
-        }
-      });
-    });
-
-    const form = document.getElementById('formularzKontaktowy');
-    const status = document.getElementById('statusFormularza');
-    form.addEventListener('submit', function (event) {
-      event.preventDefault();
-      if (!form.checkValidity()) {
-        form.classList.add('was-validated');
-        status.textContent = '';
-        return;
-      }
-      form.reset();
-      form.classList.remove('was-validated');
-      status.textContent = 'Dziękujemy! Odezwiemy się w ciągu 24 godzin.';
-    });
-  </script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/motion@11.11.13/dist/motion.js"></script>
+  <script src="main.js"></script>
 </body>
 </html>
