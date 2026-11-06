@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Planery, workbooki i narzędzia marketingowe marki Puls Digital.">
+  <meta name="theme-color" content="#24241F">
+  <title>Sklep – Puls Digital</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+<header>
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top site-nav" id="nawigacja" aria-label="Nawigacja główna">
+    <div class="container">
+      <a class="navbar-brand brand" href="index.html#hero" aria-label="Puls Digital – strona główna">
+        <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="18"/><path d="M8 34h12l5-12 8 22 6-16 4 6h13"/></svg>
+        <span>Puls<span class="text-primary-brand">.</span>Digital</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuGlowne" aria-controls="menuGlowne" aria-expanded="false" aria-label="Otwórz menu"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="menuGlowne">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
+          <li class="nav-item"><a class="nav-link" href="index.html#o-nas">O nas</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#oferta">Oferta</a></li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link active" href="sklep.html" aria-current="page">Sklep</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#kontakt">Kontakt</a></li>
+        </ul>
+        <div class="nav-actions d-flex align-items-center gap-2 ms-lg-4 py-2 py-lg-0">
+          <a href="konto.html" class="nav-icon" aria-label="Konto klienta" title="Konto klienta"><i class="bi bi-person" aria-hidden="true"></i></a>
+          <a href="koszyk.html" class="nav-icon cart-nav-icon" aria-label="Koszyk" title="Koszyk"><i class="bi bi-bag" aria-hidden="true"></i><span class="badge cart-count" id="cartCount">2</span></a>
+          <a class="btn btn-cta btn-sm ms-2 nav-cta" href="index.html#kontakt"><span>Zapytaj o ofertę</span><i class="cta-dot" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<section class="page-header"><div class="container"><p class="eyebrow">SKLEP / PULS DIGITAL</p><h1 class="section-title">Dobry marketing zaczyna się od <span class="text-primary-brand">dobrych narzędzi.</span></h1><p class="text-soft page-lead mb-0">Praktyczne planery, zeszyty i karty do organizowania komunikacji Twojej firmy.</p></div></section>
+<div class="container blog-layout"><nav aria-label="breadcrumb"><ol class="breadcrumb blog-breadcrumb"><li class="breadcrumb-item"><a href="index.html">Strona główna</a></li><li class="breadcrumb-item"><span aria-current="page">Sklep</span></li></ol></nav><div class="row g-4 g-lg-5"><aside class="col-lg-3"><form class="side-box shop-filters" id="shopFilters">
+ <h2 class="side-title">Filtruj produkty</h2><fieldset><legend class="filter-label">Kategoria</legend>
+<label class="filter-choice"><input class="form-check-input" type="checkbox" name="category" value="Planery"> Planery</label><label class="filter-choice"><input class="form-check-input" type="checkbox" name="category" value="Workbooki"> Workbooki</label><label class="filter-choice"><input class="form-check-input" type="checkbox" name="category" value="Karty"> Karty</label><label class="filter-choice"><input class="form-check-input" type="checkbox" name="category" value="Poradniki"> Poradniki</label><label class="filter-choice"><input class="form-check-input" type="checkbox" name="category" value="Zestawy"> Zestawy</label></fieldset>
+ <div class="mt-4"><label class="filter-label" for="priceLimit">Cena maksymalna: <span id="priceValue">250 zł</span></label><input type="range" class="form-range" id="priceLimit" min="0" max="250" step="10" value="250"></div>
+ <fieldset class="mt-4"><legend class="filter-label">Dostępność i cechy</legend><label class="filter-choice"><input type="checkbox" class="form-check-input" id="inStock"> Dostępne od ręki</label><label class="filter-choice"><input type="checkbox" class="form-check-input" id="onSale"> Tylko promocje</label></fieldset>
+ <button class="btn btn-ghost w-100 mt-4" type="reset">Wyczyść filtry</button></form></aside>
+<main class="col-lg-9"><div class="shop-toolbar d-flex flex-wrap align-items-center justify-content-between gap-3 mb-4"><p id="resultsCount" class="text-soft mb-0" aria-live="polite">Znaleziono 6 produktów</p><div class="d-flex align-items-center gap-2"><label for="sortProducts" class="small text-soft">Sortuj:</label><select class="form-select form-select-sm" id="sortProducts"><option value="popular">Popularność</option><option value="price-asc">Cena: rosnąco</option><option value="price-desc">Cena: malejąco</option><option value="name">Nazwa: A–Z</option></select></div></div>
+<div class="row g-4" id="productGrid"><div class="col-sm-6 col-xl-4 d-flex" data-category="Planery" data-price="89" data-name="Planer Social Media 2027">
+      <article class="card product-card w-100"><a class="product-image" href="produkt.html"><span class="badge product-badge">−25%</span><img src="img/produkt-1.jpg" alt="Okładka: Planer Social Media 2027" loading="lazy" width="1000" height="800"></a>
+        <div class="card-body"><p class="product-category">Planery</p><h3 class="card-title product-title"><a href="produkt.html">Planer Social Media 2027</a></h3>
+          <div class="product-stars" aria-label="Ocena 4,9 na 5"><i class="bi bi-star-fill"></i> 4,9 <span class="text-soft">(42 opinii)</span></div>
+          <div class="product-price">89,00 zł <del class="old-price">119,00 zł</del></div><a href="produkt.html" class="btn btn-ghost btn-sm w-100 justify-content-center">Zobacz szczegóły <i class="bi bi-arrow-up-right"></i></a>
+        </div></article></div><div class="col-sm-6 col-xl-4 d-flex" data-category="Workbooki" data-price="129" data-name="Workbook Strategia Marki">
+      <article class="card product-card w-100"><a class="product-image" href="produkt.html"><span class="badge product-badge">Bestseller</span><img src="img/produkt-2.jpg" alt="Okładka: Workbook Strategia Marki" loading="lazy" width="1000" height="800"></a>
+        <div class="card-body"><p class="product-category">Workbooki</p><h3 class="card-title product-title"><a href="produkt.html">Workbook Strategia Marki</a></h3>
+          <div class="product-stars" aria-label="Ocena 4,8 na 5"><i class="bi bi-star-fill"></i> 4,8 <span class="text-soft">(31 opinii)</span></div>
+          <div class="product-price">129,00 zł </div><a href="produkt.html" class="btn btn-ghost btn-sm w-100 justify-content-center">Zobacz szczegóły <i class="bi bi-arrow-up-right"></i></a>
+        </div></article></div><div class="col-sm-6 col-xl-4 d-flex" data-category="Planery" data-price="49" data-name="Notatnik Content Creatora">
+      <article class="card product-card w-100"><a class="product-image" href="produkt.html"><img src="img/produkt-3.jpg" alt="Okładka: Notatnik Content Creatora" loading="lazy" width="1000" height="800"></a>
+        <div class="card-body"><p class="product-category">Planery</p><h3 class="card-title product-title"><a href="produkt.html">Notatnik Content Creatora</a></h3>
+          <div class="product-stars" aria-label="Ocena 4,7 na 5"><i class="bi bi-star-fill"></i> 4,7 <span class="text-soft">(24 opinii)</span></div>
+          <div class="product-price">49,00 zł </div><a href="produkt.html" class="btn btn-ghost btn-sm w-100 justify-content-center">Zobacz szczegóły <i class="bi bi-arrow-up-right"></i></a>
+        </div></article></div><div class="col-sm-6 col-xl-4 d-flex" data-category="Karty" data-price="69" data-name="Karty pomysłów na Reels">
+      <article class="card product-card w-100"><a class="product-image" href="produkt.html"><span class="badge product-badge">Nowość</span><img src="img/produkt-4.jpg" alt="Okładka: Karty pomysłów na Reels" loading="lazy" width="1000" height="800"></a>
+        <div class="card-body"><p class="product-category">Karty</p><h3 class="card-title product-title"><a href="produkt.html">Karty pomysłów na Reels</a></h3>
+          <div class="product-stars" aria-label="Ocena 4,9 na 5"><i class="bi bi-star-fill"></i> 4,9 <span class="text-soft">(18 opinii)</span></div>
+          <div class="product-price">69,00 zł </div><a href="produkt.html" class="btn btn-ghost btn-sm w-100 justify-content-center">Zobacz szczegóły <i class="bi bi-arrow-up-right"></i></a>
+        </div></article></div><div class="col-sm-6 col-xl-4 d-flex" data-category="Poradniki" data-price="99" data-name="Przewodnik Meta Ads">
+      <article class="card product-card w-100"><a class="product-image" href="produkt.html"><img src="img/produkt-5.jpg" alt="Okładka: Przewodnik Meta Ads" loading="lazy" width="1000" height="800"></a>
+        <div class="card-body"><p class="product-category">Poradniki</p><h3 class="card-title product-title"><a href="produkt.html">Przewodnik Meta Ads</a></h3>
+          <div class="product-stars" aria-label="Ocena 4,8 na 5"><i class="bi bi-star-fill"></i> 4,8 <span class="text-soft">(17 opinii)</span></div>
+          <div class="product-price">99,00 zł </div><a href="produkt.html" class="btn btn-ghost btn-sm w-100 justify-content-center">Zobacz szczegóły <i class="bi bi-arrow-up-right"></i></a>
+        </div></article></div><div class="col-sm-6 col-xl-4 d-flex" data-category="Zestawy" data-price="179" data-name="Zestaw Startowy Marki">
+      <article class="card product-card w-100"><a class="product-image" href="produkt.html"><span class="badge product-badge">−18%</span><img src="img/produkt-6.jpg" alt="Okładka: Zestaw Startowy Marki" loading="lazy" width="1000" height="800"></a>
+        <div class="card-body"><p class="product-category">Zestawy</p><h3 class="card-title product-title"><a href="produkt.html">Zestaw Startowy Marki</a></h3>
+          <div class="product-stars" aria-label="Ocena 5,0 na 5"><i class="bi bi-star-fill"></i> 5,0 <span class="text-soft">(12 opinii)</span></div>
+          <div class="product-price">179,00 zł <del class="old-price">219,00 zł</del></div><a href="produkt.html" class="btn btn-ghost btn-sm w-100 justify-content-center">Zobacz szczegóły <i class="bi bi-arrow-up-right"></i></a>
+        </div></article></div></div><p class="d-none text-soft mt-4" id="noProducts">Nie znaleziono produktów dla tych filtrów.</p>
+<nav aria-label="Paginacja produktów" class="mt-5"><ul class="pagination blog-pagination justify-content-center"><li class="page-item active" aria-current="page"><span class="page-link">1</span></li><li class="page-item disabled"><span class="page-link">2</span></li><li class="page-item disabled"><span class="page-link">3</span></li></ul></nav></main>
+</div></div>
+<footer class="site-footer">
+  <div class="container">
+    <p class="footer-word" aria-hidden="true">Puls<span class="text-primary-brand">.</span>Digital</p>
+    <div class="row g-3 align-items-end">
+      <div class="col-md-7">
+        <p class="mb-1 small">Puls Digital · Agencja marketingowa · Warszawa</p>
+        <p class="mb-0 small">ul. Przykładowa 12, 00-001 Warszawa · Dane demonstracyjne</p>
+      </div>
+      <div class="col-md-5 text-md-end">
+        <p class="mb-0 small">&copy; <span id="rok">2026</span> Puls Digital. Wszelkie prawa zastrzeżone.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="main.js"></script>
+</body>
+</html>

@@ -3,44 +3,45 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Puls Digital – agencja marketingowa dla małych i średnich firm. Marketing internetowy, prowadzenie social mediów i kampanie reklamowe.">
+  <meta name="description" content="Agencja marketingowa Puls Digital – social media, kampanie reklamowe i marketing internetowy.">
   <meta name="theme-color" content="#24241F">
   <title>Puls Digital – Agencja Marketingowa</title>
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:ital,wght@0,500;0,700;0,800;0,900;1,800&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
   <link href="style.css" rel="stylesheet">
 </head>
 <body>
 
   <!-- 1. Pasek nawigacyjny -->
   <header>
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top site-nav" id="nawigacja" aria-label="Nawigacja główna">
-      <div class="container">
-        <a class="navbar-brand brand" href="#hero" data-testid="nav-brand-link">
-          <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="18"/><path d="M8 34h12l5-12 8 22 6-16 4 6h13"/></svg>
-          <span>Puls<span class="text-primary-brand">.</span>Digital</span>
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuGlowne" aria-controls="menuGlowne" aria-expanded="false" aria-label="Przełącz nawigację" data-testid="navbar-toggler">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="menuGlowne">
-          <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
-            <li class="nav-item"><a class="nav-link" href="#o-nas" data-testid="nav-o-nas-link">O nas</a></li>
-            <li class="nav-item"><a class="nav-link" href="#oferta" data-testid="nav-oferta-link">Oferta</a></li>
-            <li class="nav-item"><a class="nav-link" href="blog.html" data-testid="nav-blog-link">Blog</a></li>
-            <li class="nav-item"><a class="nav-link" href="#kontakt" data-testid="nav-kontakt-link">Kontakt</a></li>
-            <li class="nav-item ms-lg-2 mt-2 mt-lg-0 mb-2 mb-lg-0">
-              <a class="btn btn-cta btn-sm" href="#kontakt" data-testid="nav-cta-button"><span>Zapytaj o ofertę</span><i class="cta-dot" aria-hidden="true"></i></a>
-            </li>
-          </ul>
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top site-nav" id="nawigacja" aria-label="Nawigacja główna">
+    <div class="container">
+      <a class="navbar-brand brand" href="index.html#hero" aria-label="Puls Digital – strona główna">
+        <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="18"/><path d="M8 34h12l5-12 8 22 6-16 4 6h13"/></svg>
+        <span>Puls<span class="text-primary-brand">.</span>Digital</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuGlowne" aria-controls="menuGlowne" aria-expanded="false" aria-label="Otwórz menu"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="menuGlowne">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
+          <li class="nav-item"><a class="nav-link" href="index.html#o-nas">O nas</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#oferta">Oferta</a></li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="sklep.html">Sklep</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#kontakt">Kontakt</a></li>
+        </ul>
+        <div class="nav-actions d-flex align-items-center gap-2 ms-lg-4 py-2 py-lg-0">
+          <a href="konto.html" class="nav-icon" aria-label="Konto klienta" title="Konto klienta"><i class="bi bi-person" aria-hidden="true"></i></a>
+          <a href="koszyk.html" class="nav-icon cart-nav-icon" aria-label="Koszyk" title="Koszyk"><i class="bi bi-bag" aria-hidden="true"></i><span class="badge cart-count" id="cartCount">2</span></a>
+          <a class="btn btn-cta btn-sm ms-2 nav-cta" href="index.html#kontakt"><span>Zapytaj o ofertę</span><i class="cta-dot" aria-hidden="true"></i></a>
         </div>
       </div>
-    </nav>
-  </header>
+    </div>
+  </nav>
+</header>
 
   <main>
     <!-- 2. Sekcja wiodąca -->
@@ -231,26 +232,48 @@
       </div>
     </section>
 
+    <!-- 4c. Wyróżnione produkty -->
+    <section id="sklep" class="section section-alt">
+      <div class="container"><div class="d-flex flex-wrap justify-content-between align-items-end gap-3 mb-5"><div><p class="eyebrow">04 — Sklep</p><h2 class="section-title mb-0">Narzędzia dla <span class="text-primary-brand">Twojej marki</span></h2><p class="text-soft mt-3 mb-0">Planery, workbooki i materiały, które pomagają zamieniać pomysły w działanie.</p></div><a href="sklep.html" class="btn btn-ghost">Przeglądaj cały sklep <i class="bi bi-arrow-up-right"></i></a></div>
+        <div class="row g-4"><div class="col-sm-6 col-xl-4 d-flex" data-category="Planery" data-price="89" data-name="Planer Social Media 2027">
+      <article class="card product-card w-100"><a class="product-image" href="produkt.html"><span class="badge product-badge">−25%</span><img src="img/produkt-1.jpg" alt="Okładka: Planer Social Media 2027" loading="lazy" width="1000" height="800"></a>
+        <div class="card-body"><p class="product-category">Planery</p><h3 class="card-title product-title"><a href="produkt.html">Planer Social Media 2027</a></h3>
+          <div class="product-stars" aria-label="Ocena 4,9 na 5"><i class="bi bi-star-fill"></i> 4,9 <span class="text-soft">(42 opinii)</span></div>
+          <div class="product-price">89,00 zł <del class="old-price">119,00 zł</del></div><a href="produkt.html" class="btn btn-ghost btn-sm w-100 justify-content-center">Zobacz szczegóły <i class="bi bi-arrow-up-right"></i></a>
+        </div></article></div><div class="col-sm-6 col-xl-4 d-flex" data-category="Workbooki" data-price="129" data-name="Workbook Strategia Marki">
+      <article class="card product-card w-100"><a class="product-image" href="produkt.html"><span class="badge product-badge">Bestseller</span><img src="img/produkt-2.jpg" alt="Okładka: Workbook Strategia Marki" loading="lazy" width="1000" height="800"></a>
+        <div class="card-body"><p class="product-category">Workbooki</p><h3 class="card-title product-title"><a href="produkt.html">Workbook Strategia Marki</a></h3>
+          <div class="product-stars" aria-label="Ocena 4,8 na 5"><i class="bi bi-star-fill"></i> 4,8 <span class="text-soft">(31 opinii)</span></div>
+          <div class="product-price">129,00 zł </div><a href="produkt.html" class="btn btn-ghost btn-sm w-100 justify-content-center">Zobacz szczegóły <i class="bi bi-arrow-up-right"></i></a>
+        </div></article></div><div class="col-sm-6 col-xl-4 d-flex" data-category="Planery" data-price="49" data-name="Notatnik Content Creatora">
+      <article class="card product-card w-100"><a class="product-image" href="produkt.html"><img src="img/produkt-3.jpg" alt="Okładka: Notatnik Content Creatora" loading="lazy" width="1000" height="800"></a>
+        <div class="card-body"><p class="product-category">Planery</p><h3 class="card-title product-title"><a href="produkt.html">Notatnik Content Creatora</a></h3>
+          <div class="product-stars" aria-label="Ocena 4,7 na 5"><i class="bi bi-star-fill"></i> 4,7 <span class="text-soft">(24 opinii)</span></div>
+          <div class="product-price">49,00 zł </div><a href="produkt.html" class="btn btn-ghost btn-sm w-100 justify-content-center">Zobacz szczegóły <i class="bi bi-arrow-up-right"></i></a>
+        </div></article></div></div>
+      </div>
+    </section>
+
     <!-- 5. Sekcja kontaktowa -->
     <section id="kontakt" class="section section-dark">
       <div class="container">
         <div class="row g-4 g-lg-5">
           <div class="col-lg-5" data-reveal>
-            <p class="eyebrow">04 — Kontakt</p>
+            <p class="eyebrow">05 — Kontakt</p>
             <h2 class="section-title">Sprawdźmy, jak mocno może bić <span class="text-primary-brand">Twoja marka</span></h2>
             <p class="text-soft">Napisz kilka słów o swojej firmie — przygotujemy propozycję działań dopasowaną do Twoich celów.</p>
             <address class="contact-list mt-4 mb-0" data-testid="contact-details">
               <div class="contact-item">
                 <span class="contact-label">Adres</span>
-                <span>[ulica i numer]<br>[kod pocztowy, miasto]</span>
+                <span>ul. Przykładowa 12<br>00-001 Warszawa</span>
               </div>
               <div class="contact-item">
                 <span class="contact-label">E-mail</span>
-                <span>[adres e-mail]</span>
+                <span><a href="mailto:kontakt@pulsdigital.pl">kontakt@pulsdigital.pl</a></span>
               </div>
               <div class="contact-item">
                 <span class="contact-label">Telefon</span>
-                <span>[numer telefonu]</span>
+                <span><a href="tel:+48220000000">+48 22 000 00 00</a></span>
               </div>
             </address>
           </div>
@@ -296,25 +319,22 @@
     </section>
   </main>
 
-  <!-- 6. Stopka -->
   <footer class="site-footer">
-    <div class="container">
-      <p class="footer-word" aria-hidden="true">Puls<span class="text-primary-brand">.</span>Digital</p>
-      <div class="row g-3 align-items-end">
-        <div class="col-md-7">
-          <p class="mb-1 small" data-testid="footer-company">[Pełna nazwa firmy] · NIP [NIP] · REGON [REGON]</p>
-          <p class="mb-0 small">[ulica i numer], [kod pocztowy, miasto]</p>
-        </div>
-        <div class="col-md-5 text-md-end">
-          <p class="mb-0 small" data-testid="footer-copyright">&copy; <span id="rok">2026</span> Puls Digital. Wszelkie prawa zastrzeżone.</p>
-        </div>
+  <div class="container">
+    <p class="footer-word" aria-hidden="true">Puls<span class="text-primary-brand">.</span>Digital</p>
+    <div class="row g-3 align-items-end">
+      <div class="col-md-7">
+        <p class="mb-1 small">Puls Digital · Agencja marketingowa · Warszawa</p>
+        <p class="mb-0 small">ul. Przykładowa 12, 00-001 Warszawa · Dane demonstracyjne</p>
+      </div>
+      <div class="col-md-5 text-md-end">
+        <p class="mb-0 small">&copy; <span id="rok">2026</span> Puls Digital. Wszelkie prawa zastrzeżone.</p>
       </div>
     </div>
-  </footer>
+  </div>
+</footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/motion@11.11.13/dist/motion.js"></script>
-  <script src="main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="main.js"></script>
 </body>
 </html>
