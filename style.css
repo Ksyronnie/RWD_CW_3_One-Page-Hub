@@ -702,3 +702,86 @@ h1, h2, h3, h4, .brand {
   .about-badge { right: 0.5rem; font-size: 0.78rem; }
   .offer-card .card-body { padding: 1.9rem; }
 }
+
+
+/* =====================================================
+   ===== MODUŁ BLOGA (index #blog, blog.html, single.html)
+   ===================================================== */
+
+/* Karty wpisów */
+.post-card { background: var(--raised); border: 1px solid var(--line); border-radius: 1.25rem; overflow: hidden; color: var(--text); transition: transform 0.4s var(--ease), border-color 0.4s var(--ease); }
+.post-card:hover { transform: translateY(-4px); border-color: rgba(72, 249, 237, 0.4); }
+.post-thumb { display: block; aspect-ratio: 3 / 2; overflow: hidden; }
+.post-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s var(--ease); }
+.post-card:hover .post-thumb img { transform: scale(1.06); }
+.post-meta { display: flex; align-items: center; gap: 0.75rem; font-size: 0.8rem; color: var(--soft); margin-bottom: 0.75rem; }
+.post-badge { background: rgba(72, 249, 237, 0.14); color: var(--primary); font-weight: 600; }
+.post-title { font-size: 1.15rem; }
+.post-title a { color: var(--text); text-decoration: none; }
+.post-title a:hover { color: var(--primary); }
+.post-more { color: var(--primary); font-weight: 600; text-decoration: none; font-size: 0.9rem; }
+.post-more:hover { text-decoration: underline; }
+
+/* Nagłówek podstrony i układ */
+.page-header { padding: 9rem 0 3.5rem; background: var(--deep); border-bottom: 1px solid var(--line); }
+.page-lead { max-width: 40rem; }
+.blog-layout { padding-block: 4rem 6rem; }
+.single-layout { padding-top: 7.5rem; }
+
+/* Paginacja */
+.blog-pagination { --bs-pagination-bg: var(--raised); --bs-pagination-color: var(--text); --bs-pagination-border-color: var(--line); --bs-pagination-hover-bg: var(--cta); --bs-pagination-hover-color: var(--text); --bs-pagination-hover-border-color: var(--line); --bs-pagination-active-bg: var(--primary); --bs-pagination-active-color: var(--secondary); --bs-pagination-active-border-color: var(--primary); --bs-pagination-disabled-bg: var(--deep); --bs-pagination-disabled-color: var(--soft); --bs-pagination-disabled-border-color: var(--line); --bs-pagination-focus-box-shadow: 0 0 0 0.2rem rgba(72, 249, 237, 0.35); }
+
+/* Pasek boczny */
+.side-box { background: var(--raised); border: 1px solid var(--line); border-radius: 1.25rem; padding: 1.5rem; margin-bottom: 1.5rem; }
+.side-title { font-size: 1.1rem; margin-bottom: 1rem; }
+.blog-sidebar .form-control, .comment-form .form-control { background: var(--deep); border-color: var(--line); color: var(--text); }
+.search-icon { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; }
+.side-cats { --bs-list-group-bg: transparent; --bs-list-group-border-color: var(--line); --bs-list-group-color: var(--text); }
+.side-cats .list-group-item { padding-inline: 0; }
+.side-cats a { color: var(--text); text-decoration: none; }
+.side-cats a:hover { color: var(--primary); }
+.rec-item { display: flex; gap: 0.85rem; align-items: center; color: var(--text); text-decoration: none; padding: 0.5rem 0; font-size: 0.9rem; font-weight: 500; }
+.rec-item:hover { color: var(--primary); }
+.rec-item img { width: 72px; height: 54px; object-fit: cover; border-radius: 0.5rem; flex-shrink: 0; }
+
+/* Pojedynczy wpis */
+.blog-breadcrumb { --bs-breadcrumb-divider-color: var(--soft); --bs-breadcrumb-item-active-color: var(--soft); font-size: 0.875rem; }
+.blog-breadcrumb a { color: var(--primary); text-decoration: none; }
+.post-meta-bar { display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; color: var(--soft); font-size: 0.875rem; margin: 1rem 0 2rem; }
+.post-cover { width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 1.25rem; margin-bottom: 2rem; }
+.post-lead { font-size: 1.3rem; line-height: 1.6; color: var(--text); margin-bottom: 2rem; }
+.post-article h2 { margin-top: 2.5rem; margin-bottom: 1rem; font-size: 1.6rem; }
+.post-article h3 { margin-top: 2rem; margin-bottom: 0.85rem; font-size: 1.25rem; }
+.post-quote { border-left: 4px solid var(--primary); padding: 1rem 1.5rem; margin: 2rem 0; background: var(--raised); border-radius: 0 1rem 1rem 0; font-family: var(--font-head); font-style: italic; }
+.post-quote .blockquote-footer { color: var(--soft); margin-top: 0.5rem; }
+.post-table { --bs-table-bg: transparent; --bs-table-color: var(--text); --bs-table-border-color: var(--line); }
+.post-table thead th { color: var(--primary); }
+.post-figure { margin: 2rem 0; }
+.post-figure img { border-radius: 1rem; }
+.post-figure .figure-caption { color: var(--soft); }
+.post-footer { border-top: 1px solid var(--line); margin-top: 3rem; padding-top: 2rem; }
+.post-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2rem; }
+.post-tag { background: var(--raised); color: var(--text); border: 1px solid var(--line); text-decoration: none; font-weight: 500; padding: 0.5em 0.85em; }
+.post-tag:hover { border-color: var(--primary); color: var(--primary); }
+
+/* Boks autora */
+.author-box { display: flex; gap: 1.25rem; align-items: center; background: var(--raised); border: 1px solid var(--line); border-radius: 1.25rem; padding: 1.5rem; margin-bottom: 2rem; }
+.author-avatar { width: 96px; height: 96px; border-radius: 50%; object-fit: cover; border: 3px solid var(--primary); flex-shrink: 0; }
+.author-name { font-family: var(--font-head); font-weight: 700; margin-bottom: 0.35rem; }
+@media (max-width: 575.98px) { .author-box { flex-direction: column; text-align: center; } }
+
+.share-box { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; }
+.share-label { color: var(--soft); margin-right: 0.5rem; }
+
+/* Nawigacja poprzedni / następny */
+.post-nav { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 3rem 0; }
+.post-nav-link { background: var(--raised); border: 1px solid var(--line); border-radius: 1rem; padding: 1.25rem; color: var(--text); text-decoration: none; font-weight: 600; }
+.post-nav-link:hover { border-color: var(--primary); }
+.post-nav-label { display: block; color: var(--primary); font-size: 0.8rem; margin-bottom: 0.35rem; }
+@media (max-width: 575.98px) { .post-nav { grid-template-columns: 1fr; } .post-nav-link.text-end { text-align: left !important; } }
+
+/* Komentarze */
+.comment { border-left: 3px solid var(--cta); padding: 0.5rem 0 0.5rem 1.25rem; margin-bottom: 1.5rem; }
+.comment-head { margin-bottom: 0.35rem; }
+.comment-head time { color: var(--soft); font-size: 0.8rem; margin-left: 0.5rem; }
+.comment-form { margin-top: 2.5rem; }

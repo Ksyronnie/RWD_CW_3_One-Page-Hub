@@ -1,5 +1,5 @@
 (function () {
-  document.getElementById('rok').textContent = new Date().getFullYear();
+  var rokEl = document.getElementById('rok'); if (rokEl) rokEl.textContent = new Date().getFullYear();
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   // Płynne przewijanie (Lenis)
@@ -16,7 +16,7 @@
       var target = document.querySelector(link.getAttribute('href'));
       if (!target) return;
       e.preventDefault();
-      if (menu.classList.contains('show')) bootstrap.Collapse.getOrCreateInstance(menu).hide();
+      if (menu && menu.classList.contains('show')) bootstrap.Collapse.getOrCreateInstance(menu).hide();
       if (lenis) lenis.scrollTo(target, { offset: -70 });
       else target.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth' });
     });
@@ -37,7 +37,7 @@
   var hero = document.getElementById('hero');
   var inner = document.getElementById('heroInner');
   var spot = document.getElementById('heroSpot');
-  if (!reduce && window.matchMedia('(pointer: fine)').matches) {
+  if (hero && inner && spot && !reduce && window.matchMedia('(pointer: fine)').matches) {
     hero.addEventListener('pointermove', function (e) {
       var r = hero.getBoundingClientRect();
       var x = (e.clientX - r.left) / r.width - 0.5;
@@ -75,7 +75,7 @@
   // Formularz
   var form = document.getElementById('formularzKontaktowy');
   var status = document.getElementById('statusFormularza');
-  form.addEventListener('submit', function (event) {
+  if (form) form.addEventListener('submit', function (event) {
     event.preventDefault();
     if (!form.checkValidity()) {
       form.classList.add('was-validated');
