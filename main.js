@@ -1,5 +1,59 @@
+/* Wspólne elementy strony. Edytujesz je raz – zmieniają się na każdej podstronie. */
+function dodajHeader() {
+  const miejsce = document.getElementById('site-header');
+  if (!miejsce) return;
+  miejsce.outerHTML = `
+<header>
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top site-nav" id="nawigacja" aria-label="Nawigacja główna">
+    <div class="container">
+      <a class="navbar-brand brand" href="index.html#hero" aria-label="Puls Digital – strona główna">
+        <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="18"/><path d="M8 34h12l5-12 8 22 6-16 4 6h13"/></svg>
+        <span>Puls<span class="text-primary-brand">.</span>Digital</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuGlowne" aria-controls="menuGlowne" aria-expanded="false" aria-label="Otwórz menu"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="menuGlowne">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
+          <li class="nav-item"><a class="nav-link" href="index.html#o-nas">O nas</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#oferta">Oferta</a></li>
+          <li class="nav-item"><a class="nav-link active" href="blog.html" aria-current="page">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="sklep.html">Sklep</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#kontakt">Kontakt</a></li>
+        </ul>
+        <div class="nav-actions d-flex align-items-center gap-2 ms-lg-4 py-2 py-lg-0">
+          <a href="konto.html" class="nav-icon" aria-label="Konto klienta" title="Konto klienta"><i class="bi bi-person" aria-hidden="true"></i></a>
+          <a href="koszyk.html" class="nav-icon cart-nav-icon" aria-label="Koszyk" title="Koszyk"><i class="bi bi-bag" aria-hidden="true"></i><span class="badge cart-count" id="cartCount">2</span></a>
+          <a class="btn btn-cta btn-sm ms-2 nav-cta" href="index.html#kontakt"><span>Zapytaj o ofertę</span><i class="cta-dot" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+`;
+}
+
+function dodajFooter() {
+  const miejsce = document.getElementById('site-footer');
+  if (!miejsce) return;
+  miejsce.outerHTML = `
+<footer class="site-footer">
+  <div class="container">
+    <p class="footer-word" aria-hidden="true">Puls<span class="text-primary-brand">.</span>Digital</p>
+    <div class="row g-3 align-items-end">
+      <div class="col-md-7">
+        <p class="mb-1 small">Puls Digital · Agencja marketingowa · Warszawa</p>
+        <p class="mb-0 small">ul. Przykładowa 12, 00-001 Warszawa · Dane demonstracyjne</p>
+      </div>
+      <div class="col-md-5 text-md-end">
+        <p class="mb-0 small">&copy; <span id="rok">2026</span> Puls Digital. Wszelkie prawa zastrzeżone.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+`;
+}
+
 /* Puls Digital – proste interakcje bez frameworków. Wszystkie ceny są demonstracyjne. */
-(() => {
+document.addEventListener('DOMContentLoaded', () => {
   'use strict';
   const PRODUCTS = {
     1: { id: 1, name: 'Planer Social Media 2027', price: 89, img: 'img/produkt-1.jpg' },
@@ -41,7 +95,7 @@
   const year = get('rok'); if (year) year.textContent = new Date().getFullYear();
   updateCounter();
   const nav = get('nawigacja');
-  const onScroll = () => { if (nav) nav.classList.toggle('is-scrolled', scrollY > 40); };
+  const onScroll = () => { if (nav) nav.classList.toggle('is-scrolled', !get('hero') || scrollY > 40); };
   window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
   document.querySelectorAll('#menuGlowne a').forEach(a => a.addEventListener('click', () => {
     const menu = get('menuGlowne');
@@ -219,4 +273,4 @@
     get('commentStatus').textContent = 'Komentarz nie został opublikowany — to statyczna makieta.';
     comment.reset();
   });
-})();
+});

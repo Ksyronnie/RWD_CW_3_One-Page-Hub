@@ -15,31 +15,8 @@
   <link href="style.css" rel="stylesheet">
 </head>
 <body>
-<header>
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-top site-nav" id="nawigacja" aria-label="Nawigacja główna">
-    <div class="container">
-      <a class="navbar-brand brand" href="index.html#hero" aria-label="Puls Digital – strona główna">
-        <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="18"/><path d="M8 34h12l5-12 8 22 6-16 4 6h13"/></svg>
-        <span>Puls<span class="text-primary-brand">.</span>Digital</span>
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuGlowne" aria-controls="menuGlowne" aria-expanded="false" aria-label="Otwórz menu"><span class="navbar-toggler-icon"></span></button>
-      <div class="collapse navbar-collapse" id="menuGlowne">
-        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
-          <li class="nav-item"><a class="nav-link" href="index.html#o-nas">O nas</a></li>
-          <li class="nav-item"><a class="nav-link" href="index.html#oferta">Oferta</a></li>
-          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-          <li class="nav-item"><a class="nav-link active" href="sklep.html" aria-current="page">Sklep</a></li>
-          <li class="nav-item"><a class="nav-link" href="index.html#kontakt">Kontakt</a></li>
-        </ul>
-        <div class="nav-actions d-flex align-items-center gap-2 ms-lg-4 py-2 py-lg-0">
-          <a href="konto.html" class="nav-icon" aria-label="Konto klienta" title="Konto klienta"><i class="bi bi-person" aria-hidden="true"></i></a>
-          <a href="koszyk.html" class="nav-icon cart-nav-icon" aria-label="Koszyk" title="Koszyk"><i class="bi bi-bag" aria-hidden="true"></i><span class="badge cart-count" id="cartCount">2</span></a>
-          <a class="btn btn-cta btn-sm ms-2 nav-cta" href="index.html#kontakt"><span>Zapytaj o ofertę</span><i class="cta-dot" aria-hidden="true"></i></a>
-        </div>
-      </div>
-    </div>
-  </nav>
-</header>
+  <!-- Header wspólny dla wszystkich podstron; dodawany przez main.js -->
+  <div id="site-header"></div>
 <section class="page-header"><div class="container"><p class="eyebrow">TWÓJ KOSZYK</p><h1 class="section-title">Twoje pomysły, <span class="text-primary-brand">Twój koszyk.</span></h1><p class="text-soft page-lead mb-0">Sprawdź produkty i przejdź do kolejnego kroku. To demonstracja procesu zakupowego.</p></div></section>
 <div class="container blog-layout"><main class="row g-4 g-lg-5"><div class="col-lg-8"><div class="table-responsive basket-table-wrap"><table class="table cart-table align-middle"><thead><tr><th scope="col">Produkt</th><th scope="col">Cena</th><th scope="col">Ilość</th><th scope="col">Wartość</th><th scope="col"><span class="visually-hidden">Usuń</span></th></tr></thead><tbody id="cartRows">
 <tr><td><div class="cart-product"><img src="img/produkt-1.jpg" alt="" width="1000" height="800"><span>Planer Social Media 2027</span></div></td><td>89,00 zł</td><td><input type="number" class="form-control cart-qty" min="1" max="99" value="1" aria-label="Ilość Planera"></td><td>89,00 zł</td><td><button class="icon-button" aria-label="Usuń produkt"><i class="bi bi-trash"></i></button></td></tr>
@@ -47,21 +24,13 @@
 </tbody></table><p class="d-none text-soft" id="emptyCart">Twój koszyk jest pusty. <a href="sklep.html">Wróć do sklepu.</a></p></div>
 <div class="promo-box mt-4"><label for="promoCode" class="form-label">Masz kod rabatowy?</label><div class="input-group"><input id="promoCode" class="form-control" type="text" placeholder="Wpisz kod"><button id="applyPromo" class="btn btn-ghost" type="button">Zastosuj kod</button></div><p class="small mt-2 mb-0 text-soft" id="promoStatus" role="status">Wersja demonstracyjna: kod PULS10 daje 10% zniżki.</p></div><a href="sklep.html" class="post-more mt-4 d-inline-block"><i class="bi bi-arrow-left"></i> Wróć do zakupów</a></div>
 <aside class="col-lg-4"><div class="side-box summary-card"><h2 class="side-title">Podsumowanie zamówienia</h2><div class="summary-line"><span>Produkty</span><strong id="cartSubtotal">218,00 zł</strong></div><div class="summary-line"><span>Rabat</span><strong id="cartDiscount">0,00 zł</strong></div><div class="summary-line"><span>Dostawa (od)</span><strong>0,00 zł</strong></div><div class="summary-line summary-total"><span>Razem od</span><strong id="cartTotal">218,00 zł</strong></div><p class="small text-soft">Koszt dostawy zostanie doliczony w kasie po wyborze metody.</p><a href="zamowienie.html" id="goCheckout" class="btn btn-cta w-100 justify-content-center">Przejdź do kasy <i class="bi bi-arrow-right"></i></a></div></aside></main></div>
-<footer class="site-footer">
-  <div class="container">
-    <p class="footer-word" aria-hidden="true">Puls<span class="text-primary-brand">.</span>Digital</p>
-    <div class="row g-3 align-items-end">
-      <div class="col-md-7">
-        <p class="mb-1 small">Puls Digital · Agencja marketingowa · Warszawa</p>
-        <p class="mb-0 small">ul. Przykładowa 12, 00-001 Warszawa · Dane demonstracyjne</p>
-      </div>
-      <div class="col-md-5 text-md-end">
-        <p class="mb-0 small">&copy; <span id="rok">2026</span> Puls Digital. Wszelkie prawa zastrzeżone.</p>
-      </div>
-    </div>
-  </div>
-</footer>
+  <!-- Footer wspólny dla wszystkich podstron; dodawany przez main.js -->
+  <div id="site-footer"></div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="main.js"></script>
+  <script src="main.js"></script>
+  <script>
+    dodajHeader();
+    dodajFooter();
+  </script>
 </body>
 </html>
