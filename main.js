@@ -1,4 +1,17 @@
 /* Wspólne elementy strony. Edytujesz je raz – zmieniają się na każdej podstronie. */
+function aktywnaStrona() {
+  const plik = location.pathname.split('/').pop() || 'index.html';
+  if (['blog.html', 'single.html'].includes(plik)) return 'blog';
+  if (['sklep.html', 'produkt.html', 'koszyk.html', 'zamowienie.html'].includes(plik)) return 'sklep';
+  if (plik === 'kontakt.html') return 'kontakt';
+  return '';
+}
+
+function linkNawigacji(klucz, href, tekst) {
+  const aktywny = aktywnaStrona() === klucz;
+  return `<li class="nav-item"><a class="nav-link${aktywny ? ' active' : ''}" href="${href}"${aktywny ? ' aria-current="page"' : ''}>${tekst}</a></li>`;
+}
+
 function dodajHeader() {
   const miejsce = document.getElementById('site-header');
   if (!miejsce) return;
@@ -15,14 +28,14 @@ function dodajHeader() {
         <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
           <li class="nav-item"><a class="nav-link" href="index.html#o-nas">O nas</a></li>
           <li class="nav-item"><a class="nav-link" href="index.html#oferta">Oferta</a></li>
-          <li class="nav-item"><a class="nav-link active" href="blog.html" aria-current="page">Blog</a></li>
-          <li class="nav-item"><a class="nav-link" href="sklep.html">Sklep</a></li>
-          <li class="nav-item"><a class="nav-link" href="index.html#kontakt">Kontakt</a></li>
+          ${linkNawigacji('blog', 'blog.html', 'Blog')}
+          ${linkNawigacji('sklep', 'sklep.html', 'Sklep')}
+          ${linkNawigacji('kontakt', 'kontakt.html', 'Kontakt')}
         </ul>
         <div class="nav-actions d-flex align-items-center gap-2 ms-lg-4 py-2 py-lg-0">
           <a href="konto.html" class="nav-icon" aria-label="Konto klienta" title="Konto klienta"><i class="bi bi-person" aria-hidden="true"></i></a>
           <a href="koszyk.html" class="nav-icon cart-nav-icon" aria-label="Koszyk" title="Koszyk"><i class="bi bi-bag" aria-hidden="true"></i><span class="badge cart-count" id="cartCount">2</span></a>
-          <a class="btn btn-cta btn-sm ms-2 nav-cta" href="index.html#kontakt"><span>Zapytaj o ofertę</span><i class="cta-dot" aria-hidden="true"></i></a>
+          <a class="btn btn-cta btn-sm ms-2 nav-cta" href="kontakt.html"><span>Zapytaj o ofertę</span><i class="cta-dot" aria-hidden="true"></i></a>
         </div>
       </div>
     </div>
@@ -37,15 +50,59 @@ function dodajFooter() {
   miejsce.outerHTML = `
 <footer class="site-footer">
   <div class="container">
-    <p class="footer-word" aria-hidden="true">Puls<span class="text-primary-brand">.</span>Digital</p>
-    <div class="row g-3 align-items-end">
-      <div class="col-md-7">
-        <p class="mb-1 small">Puls Digital · Agencja marketingowa · Warszawa</p>
-        <p class="mb-0 small">ul. Przykładowa 12, 00-001 Warszawa · Dane demonstracyjne</p>
+    <div class="row g-4 g-lg-5 footer-main">
+      <div class="col-12 col-md-6 col-lg-4">
+        <a class="brand footer-brand" href="index.html" aria-label="Puls Digital – strona główna">
+          <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="18"/><path d="M8 34h12l5-12 8 22 6-16 4 6h13"/></svg>
+          <span>Puls<span class="text-primary-brand">.</span>Digital</span>
+        </a>
+        <p class="footer-text mt-3">Agencja marketingu cyfrowego z Warszawy. Budujemy rozpoznawalne marki w social mediach, łącząc strategię, content i kampanie płatne. Mierzymy efekty, nie tylko zasięgi.</p>
+        <ul class="footer-social list-unstyled d-flex gap-2 mb-0">
+          <li><a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="bi bi-facebook" aria-hidden="true"></i></a></li>
+          <li><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="bi bi-instagram" aria-hidden="true"></i></a></li>
+          <li><a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="bi bi-linkedin" aria-hidden="true"></i></a></li>
+          <li><a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="bi bi-tiktok" aria-hidden="true"></i></a></li>
+        </ul>
       </div>
-      <div class="col-md-5 text-md-end">
-        <p class="mb-0 small">&copy; <span id="rok">2026</span> Puls Digital. Wszelkie prawa zastrzeżone.</p>
+      <nav class="col-6 col-md-3 col-lg-2" aria-label="Szybka nawigacja">
+        <h2 class="footer-heading">Nawigacja</h2>
+        <ul class="footer-links list-unstyled mb-0">
+          <li><a href="index.html">Strona główna</a></li>
+          <li><a href="index.html#o-nas">O nas</a></li>
+          <li><a href="index.html#oferta">Oferta</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </nav>
+      <nav class="col-6 col-md-3 col-lg-2" aria-label="Strefa klienta">
+        <h2 class="footer-heading">Strefa klienta</h2>
+        <ul class="footer-links list-unstyled mb-0">
+          <li><a href="sklep.html">Sklep</a></li>
+          <li><a href="koszyk.html">Koszyk</a></li>
+          <li><a href="konto.html">Moje konto</a></li>
+          <li><a href="polityka-prywatnosci.html">Polityka prywatności</a></li>
+        </ul>
+      </nav>
+      <div class="col-12 col-md-6 col-lg-4">
+        <h2 class="footer-heading">Newsletter</h2>
+        <p class="footer-text">Raz w miesiącu: trendy, case studies i praktyczne checklisty.</p>
+        <form id="newsletterForm" class="footer-newsletter" novalidate>
+          <label for="newsletterEmail" class="visually-hidden">Adres e-mail</label>
+          <div class="input-group">
+            <input type="email" class="form-control" id="newsletterEmail" name="email" placeholder="twoj@email.pl" autocomplete="email" required>
+            <button class="btn btn-cta" type="submit">Zapisz się</button>
+          </div>
+          <p id="newsletterStatus" class="form-status small mt-2 mb-0" role="status"></p>
+        </form>
+        <ul class="footer-contact list-unstyled mt-3 mb-0">
+          <li><i class="bi bi-envelope" aria-hidden="true"></i> <a href="mailto:kontakt@pulsdigital.pl">kontakt@pulsdigital.pl</a></li>
+          <li><i class="bi bi-telephone" aria-hidden="true"></i> <a href="tel:+48220000000">+48 22 000 00 00</a></li>
+        </ul>
       </div>
+    </div>
+    <div class="footer-bottom d-flex flex-column flex-md-row justify-content-between gap-2">
+      <p class="mb-0">&copy; <span id="rok">2026</span> Puls Digital. Wszelkie prawa zastrzeżone.</p>
+      <p class="mb-0">Projekt: zespół RWD · <a href="polityka-prywatnosci.html">Polityka prywatności</a></p>
     </div>
   </div>
 </footer>
@@ -112,18 +169,32 @@ document.addEventListener('DOMContentLoaded', () => {
     contact.reset(); contact.classList.remove('was-validated');
   });
 
-  // Wyszukiwanie tekstowe artykułów na stronie bloga
-  const blogForm = get('blogSearch');
-  if (blogForm) blogForm.addEventListener('submit', event => {
+  // Newsletter w stopce: walidacja i komunikat (brak backendu)
+  const newsletter = get('newsletterForm');
+  if (newsletter) newsletter.addEventListener('submit', event => {
     event.preventDefault();
-    const query = get('blogQuery').value.trim().toLocaleLowerCase('pl-PL');
-    let shown = 0;
-    document.querySelectorAll('#blogGrid > div').forEach(card => {
-      const match = card.textContent.toLocaleLowerCase('pl-PL').includes(query);
-      card.classList.toggle('d-none', !match); if (match) shown++;
-    });
-    get('blogEmpty').classList.toggle('d-none', shown > 0);
+    const email = get('newsletterEmail');
+    if (!email.checkValidity()) { get('newsletterStatus').textContent = 'Podaj poprawny adres e-mail.'; email.focus(); return; }
+    get('newsletterStatus').textContent = 'Dziękujemy! To formularz demonstracyjny — adres nie został zapisany.';
+    newsletter.reset();
   });
+
+  // Wyszukiwanie tekstowe artykułów na stronie bloga (także z parametru ?q= np. ze strony 404)
+  const blogForm = get('blogSearch');
+  if (blogForm) {
+    const search = () => {
+      const query = get('blogQuery').value.trim().toLocaleLowerCase('pl-PL');
+      let shown = 0;
+      document.querySelectorAll('#blogGrid > div').forEach(card => {
+        const match = card.textContent.toLocaleLowerCase('pl-PL').includes(query);
+        card.classList.toggle('d-none', !match); if (match) shown++;
+      });
+      get('blogEmpty').classList.toggle('d-none', shown > 0);
+    };
+    blogForm.addEventListener('submit', event => { event.preventDefault(); search(); });
+    const initial = new URLSearchParams(location.search).get('q');
+    if (initial) { get('blogQuery').value = initial; search(); }
+  }
 
   // Filtry sklepu; sztywna paginacja wynika z wymagań makiety
   const filters = get('shopFilters');

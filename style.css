@@ -674,16 +674,6 @@ h1, h2, h3, h4, .brand {
   overflow: hidden;
 }
 
-.footer-word {
-  font-family: var(--font-head);
-  font-weight: 900;
-  font-size: clamp(3rem, 14vw, 12rem);
-  line-height: 0.9;
-  letter-spacing: -0.06em;
-  color: var(--text);
-  margin-bottom: 2rem;
-  white-space: nowrap;
-}
 
 /* ===== Motion ===== */
 /* Elementy są widoczne także bez JavaScript. */
@@ -890,3 +880,59 @@ h1, h2, h3, h4, .brand {
 @media(max-width:991.98px) { .site-nav { background: rgba(26,26,22,.95); } .nav-cta { display: inline-flex; } .nav-actions { padding-top: 1rem; } .summary-card { position: static; } }
 @media(max-width:575.98px) { .product-card .card-body { padding: 1.1rem; } .product-title { min-height: 0; } .page-header { padding-top: 8rem; } .detail-price { font-size: 1.9rem; } }
 @media(prefers-reduced-motion:reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } }
+
+/* ========================================================
+   STRONY POMOCNICZE I STOPKA
+   ======================================================== */
+/* Stopka korporacyjna */
+.site-footer { padding-block: 4.5rem 0; }
+.footer-main { padding-bottom: 3rem; }
+.footer-brand { display: inline-flex; align-items: center; gap: .6rem; font-size: 1.35rem; font-weight: 800; color: var(--text); text-decoration: none; }
+.footer-brand .brand-mark { width: 34px; height: 34px; }
+.footer-text { color: var(--soft); font-size: .92rem; }
+.footer-heading { font-size: .8rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--text); margin-bottom: 1.1rem; }
+.footer-links li + li { margin-top: .55rem; }
+.footer-links a, .footer-contact a, .footer-bottom a { color: var(--soft); text-decoration: none; transition: color .2s var(--ease); }
+.footer-links a:hover, .footer-links a:focus-visible, .footer-contact a:hover, .footer-contact a:focus-visible, .footer-bottom a:hover, .footer-bottom a:focus-visible { color: var(--primary); }
+.footer-social a { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--line); color: var(--text); text-decoration: none; transition: background .2s var(--ease), color .2s var(--ease), border-color .2s var(--ease); }
+.footer-social a:hover, .footer-social a:focus-visible { background: var(--primary); border-color: var(--primary); color: var(--secondary); }
+.footer-newsletter .btn-cta { gap: 0; border-radius: 0 .5rem .5rem 0; }
+.footer-contact li { display: flex; align-items: center; gap: .55rem; font-size: .92rem; }
+.footer-contact li + li { margin-top: .35rem; }
+.footer-contact i { color: var(--primary); }
+.footer-bottom { border-top: 1px solid var(--line); padding-block: 1.5rem; font-size: .85rem; color: var(--soft); }
+
+/* Kontakt */
+.company-data { font-style: normal; }
+.company-data dt { color: var(--soft); font-weight: 500; }
+.company-data dd { color: var(--text); }
+.company-data a, .contact-form .form-check-label a { color: var(--primary); }
+.contact-form .form-check-input { background-color: var(--deep); border-color: rgba(240,240,212,.35); }
+.contact-form .form-check-input:checked { background-color: var(--primary); border-color: var(--primary); }
+.map-frame { border-radius: 1rem; overflow: hidden; border: 1px solid var(--line); background: var(--deep); }
+.map-frame iframe { border: 0; filter: grayscale(.35) contrast(1.05); }
+.directions li { display: flex; gap: .9rem; }
+.directions li + li { margin-top: 1rem; }
+.directions i { color: var(--primary); font-size: 1.25rem; line-height: 1.5; }
+.directions strong { display: block; color: var(--text); }
+.directions span { color: var(--soft); font-size: .92rem; }
+
+/* Polityka prywatności */
+.legal-page { padding-block: 8.5rem 6rem; }
+.legal-header { border-bottom: 1px solid var(--line); padding-bottom: 1.75rem; margin-bottom: 2rem; }
+.legal-header .section-title { font-size: clamp(2.2rem, 5vw, 3.4rem); }
+.legal-lead { font-size: 1.1rem; color: var(--text); }
+.legal-content { font-size: 1.02rem; }
+.legal-content p, .legal-content li { color: var(--soft); }
+.legal-content h2 { font-size: 1.45rem; margin: 2.75rem 0 1rem; }
+.legal-content ul { padding-left: 1.25rem; }
+.legal-content li + li { margin-top: .4rem; }
+.legal-content a { color: var(--primary); }
+.legal-table caption { caption-side: top; }
+
+/* Strona błędu 404 */
+.error-page { min-height: 100vh; padding-block: 8rem 5rem; }
+.error-code { font-family: var(--font-head); font-weight: 900; font-size: clamp(7rem, 26vw, 15rem); line-height: .85; letter-spacing: -.06em; color: var(--primary); margin-bottom: 1rem; }
+.error-text { max-width: 560px; }
+.error-search { max-width: 480px; margin-top: 2rem; }
+.error-search .btn-cta { gap: .5rem; border-radius: 0 .5rem .5rem 0; }
